@@ -39,66 +39,48 @@ def mainInterface(matrices, userIn):
         printMatricesNicely(matrices)
         print("------------------")
         
-        print("What would you like to do?")
-        print("0. Exit calculator")
-        print("1.1. Load matrices from file")
-        print("1.2. Input a matrix")
-        print("1.3. Add a label to a matrix")
-        print("1.4. Delete a matrix")
-        print("1.5. Delete all matrices")
-        print("1.6. Transpose a matrix.")
-        print("1.7. Add two matrices")
-        print("1.8. Multiply two matrices")
-        print("1.9. Check if two matrices are equal")
-        print("1.10. Add rows of a matrix")
-        print("1.11. Swap two rows of matrix")
-        print("1.12. Multiply row of matrix by scalar")
-        print("\nBelow functions can only be performed on square matrices\n")
-        print("2.1. Find the determinant of a matrix")
-        print("2.2. Find the trace of a matrix")
-        print("2.3. Invert a matrix")
-        print("2.4. Find the adjugate of a matrix")
-        print("2.5. Check whether two matrices commute")
+        print("What would you like to do?\n\
+0. Exit calculator\n\
+1.1. Load matrices from file\n\
+1.2. Input a matrix\n\
+1.3. Add a label to a matrix\n\
+1.4. Delete a matrix\n\
+1.5. Delete all matrices\n\
+1.6. Transpose a matrix\n\
+1.7. Add two matrices\n\
+1.8. Multiply two matrices\n\
+1.9. Check if two matrices are equal\n\
+1.10. Add rows of a matrix\n\
+1.11. Swap two rows of a matrix\n\
+1.12. Multiply row of matrix by scalar\n\
+\nBelow functions can only be performed on square matrices\n\n\
+2.1. Find the determinant of a matrix\n\
+2.2. Find the trace of a matrix\n\
+2.3. Invert a matrix\n\
+2.4. Find the adjugate of a matrix\n\
+2.5. Check whether two matrices commute")
         
-        function = input("Enter a choice: ")
-        if(function == "1.1"):
-            loadMats(matrices)
-        elif(function == "1.2"):
-            userIn = inputMatrix(matrices)
-        elif(function == "1.3"):
-            label(matrices)
-        elif(function == "1.4"):
-            delMatrix(matrices)
-        elif(function == "1.5"):
-            matrices.clear()
-        elif(function == "1.6"):
-            matf.initTranspose(matrices)
-        elif(function == "1.7"):
-            matf.initAddMatrices(matrices)
-        elif(function == "1.8"):
-            matf.initMultiplyMatrices(matrices)
-        elif(function == "1.9"):
-            matf.initMatsEqual(matrices)
-        elif(function == "1.10"):
-            matf.initAddRows(matrices)
-        elif(function == "1.11"):
-            matf.initSwapRows(matrices)
-        elif(function == "1.12"):
-            matf.initMultiplyRow(matrices)
-        elif(function == "2.1"):
-            sqmatf.initDet(matrices)
-        elif(function == "2.2"):
-            sqmatf.trace(matrices)
-        elif(function == "2.3"):
-            sqmatf.invertMatrix(matrices)
-        elif(function == "2.4"):
-            sqmatf.initAdjugate(matrices)
-        elif(function == "2.5"):
-            sqmatf.initMatsCommute(matrices)
-        elif(function == "0"):
-            userIn = "exit"
-        else:
-            print("\nInvalid function choice\n")
+        match input("Enter a choice: "):
+            case "1.1": loadMats(matrices)
+            case "1.2": userIn = inputMatrix(matrices)
+            case "1.3": label(matrices)
+            case "1.4": delMatrix(matrices)
+            case "1.5": matrices.clear()
+            case "1.6": matf.initTranspose(matrices)
+            case "1.7": matf.initAddMatrices(matrices)
+            case "1.8": matf.initMultiplyMatrices(matrices)
+            case "1.9": matf.initMatsEqual(matrices)
+            case "1.10": matf.initAddRows(matrices)
+            case "1.11": matf.initSwapRows(matrices)
+            case "1.12": matf.initMultiplyRow(matrices)
+            case "2.1": sqmatf.initDet(matrices)
+            case "2.2": sqmatf.trace(matrices)
+            case "2.3": sqmatf.invertMatrix(matrices)
+            case "2.4": sqmatf.initAdjugate(matrices)
+            case "2.5": sqmatf.initMatsCommute(matrices)
+            case "0": userIn = "exit"
+            case _: print("\nInvalid function choice\n")
+
     return
 
 # Determines whether input is a valid matrix.
