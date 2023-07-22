@@ -317,11 +317,5 @@ def loadMats(matrices):
             tempLabel = ""
         else:
             # Append matrix entries in current line as a new row in tempMatrix
-            tempRow = []
-            for val in row.strip().split(" "):
-                val = float(val)
-                if val.is_integer():
-                    val = int(val)
-                tempRow.append(val)
-            tempMatrix.append(tempRow)
+            tempMatrix.append([float(val) if not float(val).is_integer else int(float(val)) for val in row.strip().split(" ")])
     return
