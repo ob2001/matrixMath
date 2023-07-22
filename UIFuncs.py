@@ -157,29 +157,29 @@ def chooseRow(mat, message):
 def inputMatrix(matrices) -> str:
     tempMatrix = []
     # Loop as long as input is certainly not a valid matrix
-    valid = 0
+    valid = False
     while(not valid):
         print("Begin entering rows of matrix. Separate row entries with spaces.")
         print("When you are finished entering rows, type \"done\"")
         print("If you would like to exit the calculator, type \"exit\"")
         tempMatrix = []
-        gettingInput = 1
+        gettingInput = True
         rowIndex = 1
         while(gettingInput):
             row = []
-            userin = input(f"Row {rowIndex}: ")
-            if(userin == "done"):
-                gettingInput = 0
+            userIn = input(f"Row {rowIndex}: ")
+            if(userIn == "done"):
+                gettingInput = False
                 continue
             
-            elif(userin == "exit"):
+            elif(userIn == "exit"):
                 # Need a valid matrix to break out of this loop.
                 # Will break out of the next loop because userin == "exit"
                 tempMatrix = [[0]]
                 break
             
             else:
-                entries = userin.split()
+                entries = userIn.split()
                 for i in range(len(entries)):
                     entry = entries[i]
                     if(entry.isnumeric()):
@@ -200,7 +200,7 @@ def inputMatrix(matrices) -> str:
         else:
             newMatrix = matrix(tempMatrix, temprows, tempcols)
             matrices.append(newMatrix)
-            return userin
+            return userIn
 
 # Allows user to add a label to their matrix; purely
 # aesthetic. Labels are used when diplaying matrices
@@ -226,7 +226,7 @@ def delMatrix(matrices):
         return
 
 # Allows user to save their matrices to a text file in a
-# standard format. These text files can be read back i
+# standard format. These text files can be read back in
 # by another instance of the calculator with loadMats()
 # without needing to specially format the file. If a user
 # wants to manually create their own text file to be read
@@ -306,11 +306,11 @@ def loadMats(matrices):
             tempLabel = ""
         else:
             # Append matrix entries in current line as a new row in tempMatrix
-            string = row.strip()
-            string = string.split(" ")
-            for i in range(len(string)):
-                string[i] = float(string[i])
-                if string[i].is_integer():
-                    string[i] = int(string[i])
-            tempMatrix.append(string)
+            tempRow = []
+            for val in row.strip().split(" "):
+                val = float(val)
+                if val.is_integer():
+                    val = int(val)
+                tempRow.append(val)
+            tempMatrix.append(tempRow)
     return
