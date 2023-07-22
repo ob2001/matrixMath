@@ -43,7 +43,7 @@ if(len(matrices) >= 2 or (matrices != [] and matrices[0].mat != [[0]])):
     ui.printMatricesNicely(matrices)
     print("------------------")
     
-    save = input("Would you like to save your matrices to a text file? (y/n): ")
+    save = input("Would you like to save your matrices to a file? (y/n): ")
     if(save == "y"):
         ui.saveMats(matrices)
         
