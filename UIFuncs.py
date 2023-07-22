@@ -42,26 +42,28 @@ def mainInterface(matrices, userIn):
         printMatricesNicely(matrices)
         print("------------------")
         
-        print("What would you like to do?\n\
-0. Exit calculator\n\
-1.1. Load matrices from file\n\
-1.2. Input a matrix\n\
-1.3. Add a label to a matrix\n\
-1.4. Delete a matrix\n\
-1.5. Delete all matrices\n\
-1.6. Transpose a matrix\n\
-1.7. Add two matrices\n\
-1.8. Multiply two matrices\n\
-1.9. Check if two matrices are equal\n\
-1.10. Add rows of a matrix\n\
-1.11. Swap two rows of a matrix\n\
-1.12. Multiply row of matrix by scalar\n\
-\nBelow functions can only be performed on square matrices\n\n\
-2.1. Find the determinant of a matrix\n\
-2.2. Find the trace of a matrix\n\
-2.3. Invert a matrix\n\
-2.4. Find the adjugate of a matrix\n\
-2.5. Check whether two matrices commute")
+        print("""What would you like to do?
+0. Exit calculator
+1.1. Load matrices from file
+1.2. Input a matrix
+1.3. Add a label to a matrix
+1.4. Delete a matrix
+1.5. Delete all matrices
+1.6. Transpose a matrix
+1.7. Add two matrices
+1.8. Multiply two matrices
+1.9. Check if two matrices are equal
+1.10. Add rows of a matrix
+1.11. Swap two rows of a matrix
+1.12. Multiply row of matrix by scalar
+              
+Below functions can only be performed on square matrices
+              
+2.1. Find the determinant of a matrix
+2.2. Find the trace of a matrix
+2.3. Invert a matrix
+2.4. Find the adjugate of a matrix
+2.5. Check whether two matrices commute""")
         
         match input("Enter a choice: "):
             case "1.1": loadMats(matrices)
