@@ -33,6 +33,9 @@ import sqMatFuncs as sqmatf
 
 def mainInterface(matrices, userIn):
     while(userIn != "exit"):
+        if(userIn == "cancel"):
+            del matrices[-1]
+        
         clear()
         print("------------------")
         print("Your matrices:")
@@ -161,6 +164,7 @@ def inputMatrix(matrices) -> str:
     while(not valid):
         print("Begin entering rows of matrix. Separate row entries with spaces.")
         print("When you are finished entering rows, type \"done\"")
+        print("If you would like to cancel inputting a matrix, type \"cancel\"")
         print("If you would like to exit the calculator, type \"exit\"")
         tempMatrix = []
         gettingInput = True
@@ -171,6 +175,10 @@ def inputMatrix(matrices) -> str:
             if(userIn == "done"):
                 gettingInput = False
                 continue
+
+            elif(userIn == "cancel"):
+                tempMatrix = [[0]]
+                break
             
             elif(userIn == "exit"):
                 # Need a valid matrix to break out of this loop.
