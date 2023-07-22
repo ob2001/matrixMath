@@ -164,10 +164,11 @@ def inputMatrix(matrices) -> str:
     # Loop as long as input is certainly not a valid matrix
     valid = False
     while(not valid):
-        print("Begin entering rows of matrix. Separate row entries with spaces.")
-        print("When you are finished entering rows, type \"done\"")
-        print("If you would like to cancel inputting a matrix, type \"cancel\"")
-        print("If you would like to exit the calculator, type \"exit\"")
+        print("""Begin entering rows of matrix. Separate row entries with spaces.
+When you are finished entering rows, type \"done\"
+If you would like to cancel inputting a matrix, type \"cancel\"
+If you would like to exit the calculator, type \"exit\"""")
+        
         tempMatrix = []
         gettingInput = True
         rowIndex = 1
