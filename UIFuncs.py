@@ -242,11 +242,11 @@ def delMatrix(matrices):
 # standard matrix output format of the calculator and
 # write the file in that format.
 def saveMats(matrices):
-    outFile = input("What file would you like to output to (defaults to matsout.txt): ")
+    outFile = input("What file would you like to save to (defaults to matsout.mi): ")
     if(outFile == ""):
-        outFile = "matsout.txt"
-    elif(".txt" not in outFile):
-        outFile += ".txt"
+        outFile = "matsout.mi"
+    elif(".mi" not in outFile):
+        outFile += ".mi"
     
     file = open(outFile, "w")
     
@@ -267,9 +267,9 @@ def saveMats(matrices):
 def loadMats(matrices):
     # List text files in current directory for easy reference.
     filesList = os.listdir(".")
-    print("\nText files in current directory:")
+    print("\n.mi files in current directory:")
     for f in filesList:
-        if f.endswith(".txt"):
+        if f.endswith(".mi"):
             print(f)
     
     matrixFile = input("Input the name of the file to load: ")
